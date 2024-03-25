@@ -7,11 +7,13 @@ public class Program {
      *  принципу SRP.
      * @param args
      */
-    public static void main(String[] args) {
-        Order order = new Order();
-        System.out.println("Укажите параметры заказа:");
-        order.inputFromConsole();
-        order.saveToJson();
-    }
 
+
+    public static void main(String[] args) {
+        Client client = new Client("Игорь,");
+        Product product = new Product("Молоко", 2, 100);
+
+        Order orderService = new Order();
+        orderService.saveOrderToJson(client, product);
+    }
 }
